@@ -745,6 +745,8 @@ with pkgs;
 
   fetchFromRepoOrCz = callPackage ../build-support/fetchrepoorcz { };
 
+  fetchFromModrinth = callPackage ../build-support/fetchmodrinth { };
+
   fetchgx = callPackage ../build-support/fetchgx { };
 
   fetchPypi = callPackage ../build-support/fetchpypi { };
