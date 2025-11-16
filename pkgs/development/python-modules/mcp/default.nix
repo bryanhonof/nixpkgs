@@ -16,6 +16,7 @@
   pydantic,
   pydantic-settings,
   python-multipart,
+  pyjwt,
   sse-starlette,
   starlette,
   uvicorn,
@@ -41,14 +42,14 @@
 
 buildPythonPackage rec {
   pname = "mcp";
-  version = "1.15.0";
+  version = "1.21.1";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "modelcontextprotocol";
     repo = "python-sdk";
     tag = "v${version}";
-    hash = "sha256-pvbrNkGfQaZX95JZyYXuuH2gMzWouuGXjaDxPyKW0Zw=";
+    hash = "sha256-EhyIsupz+3kWRRmKGe0Ds813/6szpMo0zOYgRaWtlDM=";
   };
 
   postPatch = lib.optionalString stdenv.buildPlatform.isDarwin ''
@@ -80,6 +81,7 @@ buildPythonPackage rec {
     pydantic
     pydantic-settings
     python-multipart
+    pyjwt
     sse-starlette
     starlette
     uvicorn
