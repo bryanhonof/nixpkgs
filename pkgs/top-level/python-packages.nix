@@ -1609,6 +1609,10 @@ self: super: with self; {
 
   azure-monitor-ingestion = callPackage ../development/python-modules/azure-monitor-ingestion { };
 
+  azure-monitor-opentelemetry =
+    callPackage ../development/python-modules/azure-monitor-opentelemetry
+      { };
+
   azure-monitor-query = callPackage ../development/python-modules/azure-monitor-query { };
 
   azure-multiapi-storage = callPackage ../development/python-modules/azure-multiapi-storage { };
