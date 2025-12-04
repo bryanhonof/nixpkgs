@@ -338,6 +338,38 @@
     ];
     meta.maintainers = with lib.maintainers; [ techknowlogick ];
   };
+
+  ml = mkAzExtension rec {
+    pname = "ml";
+    version = "2.38.1";
+    url = "https://github.com/Azure/azure-cli-extensions/releases/download/ml-${version}/ml-${version}-py3-none-any.whl";
+    hash = "sha256-0xfoiKSe+nYWXAMHDREdZf4LVAArnlJGmJLySajLvBI=";
+    description = "Microsoft Azure Command-Line Tools AzureMachineLearningWorkspaces Extension";
+    propagatedBuildInputs = with python3Packages; [
+      azure-ai-ml
+      azure-common
+      azure-identity
+      azure-mgmt-resource
+      azure-mgmt-resourcegraph
+      azure-monitor-opentelemetry
+      azure-storage-blob
+      azure-storage-file-datalake
+      azure-storage-file-share
+      colorama
+      cryptography
+      docker
+      isodate
+      jsonschema
+      marshmallow
+      pydash
+      pyjwt
+      six
+      strictyaml
+      tqdm
+      typing-extensions
+    ];
+    meta.maintainers = with lib.maintainers; [ bryanhonof ];
+  };
 }
 // lib.optionalAttrs config.allowAliases {
   # Removed extensions
