@@ -13,7 +13,7 @@
 
 buildPythonPackage rec {
   pname = "opentelemetry-instrumentation";
-  version = "0.55b0";
+  version = "0.57b0";
   pyproject = true;
 
   disabled = pythonOlder "3.8";
@@ -23,7 +23,7 @@ buildPythonPackage rec {
     owner = "open-telemetry";
     repo = "opentelemetry-python-contrib";
     tag = "v${version}";
-    hash = "sha256-UM9ezCh3TVwyj257O0rvTCIgfrddobWcVIgJmBUj/Vo=";
+    hash = "sha256-grV3E8H42pyKDZQO+RrgDORAw/jee8YJSB69Pd3LCS8=";
   };
 
   sourceRoot = "${src.name}/opentelemetry-instrumentation";
