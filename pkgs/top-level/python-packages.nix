@@ -11359,6 +11359,10 @@ self: super: with self; {
     callPackage ../development/python-modules/opentelemetry-instrumentation-urllib3
       { };
 
+  opentelemetry-instrumentation-urllib =
+    callPackage ../development/python-modules/opentelemetry-instrumentation-urllib
+      { };
+
   opentelemetry-instrumentation-wsgi =
     callPackage ../development/python-modules/opentelemetry-instrumentation-wsgi
       { };
