@@ -11802,6 +11802,10 @@ self: super: with self; {
 
   opentelemetry-proto = callPackage ../development/python-modules/opentelemetry-proto { };
 
+  opentelemetry-resource-detector-azure =
+    callPackage ../development/python-modules/opentelemetry-resource-detector-azure
+      { };
+
   opentelemetry-resourcedetector-gcp =
     callPackage ../development/python-modules/opentelemetry-resourcedetector-gcp
       { };
