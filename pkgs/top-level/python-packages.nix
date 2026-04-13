@@ -5605,6 +5605,8 @@ self: super: with self; {
 
   fivem-api = callPackage ../development/python-modules/fivem-api { };
 
+  fixedint = callPackage ../development/python-modules/fixedint { };
+
   fixerio = callPackage ../development/python-modules/fixerio { };
 
   fixtures = callPackage ../development/python-modules/fixtures { };
