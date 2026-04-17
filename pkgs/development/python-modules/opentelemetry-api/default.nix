@@ -2,10 +2,10 @@
   lib,
   buildPythonPackage,
   fetchFromGitHub,
+  typing-extensions,
   deprecated,
   hatchling,
   importlib-metadata,
-  typing-extensions,
   opentelemetry-test-utils,
   pytestCheckHook,
   writeScript,
@@ -14,7 +14,7 @@
 let
   self = buildPythonPackage rec {
     pname = "opentelemetry-api";
-    version = "1.34.0";
+    version = "1.36.0";
     pyproject = true;
 
     # to avoid breakage, every package in opentelemetry-python must inherit this version, src, and meta
@@ -22,7 +22,7 @@ let
       owner = "open-telemetry";
       repo = "opentelemetry-python";
       tag = "v${version}";
-      hash = "sha256-fAXcS2VyDMk+UDW3ru5ZvwzXjydsY1uFcT2GvZuiGWw=";
+      hash = "sha256-z8b9QuxkKKx0GTsqB0KLnclhFhc0raG6Irfs5vBB0qY=";
     };
 
     sourceRoot = "${src.name}/opentelemetry-api";
@@ -30,9 +30,9 @@ let
     build-system = [ hatchling ];
 
     dependencies = [
+      typing-extensions
       deprecated
       importlib-metadata
-      typing-extensions
     ];
 
     pythonRelaxDeps = [ "importlib-metadata" ];
@@ -64,7 +64,10 @@ let
       description = "OpenTelemetry Python API";
       changelog = "https://github.com/open-telemetry/opentelemetry-python/releases/tag/${src.tag}";
       license = lib.licenses.asl20;
-      maintainers = [ lib.maintainers.natsukium ];
+      maintainers = with lib.maintainers; [
+        bryanhonof
+        natsukium
+      ];
     };
   };
 in
