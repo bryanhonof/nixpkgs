@@ -1397,6 +1397,8 @@ self: super: with self; {
 
   azure-applicationinsights = callPackage ../development/python-modules/azure-applicationinsights { };
 
+  azure-ai-ml = callPackage ../development/python-modules/azure-ai-ml { };
+
   azure-batch = callPackage ../development/python-modules/azure-batch { };
 
   azure-common = callPackage ../development/python-modules/azure-common { };
