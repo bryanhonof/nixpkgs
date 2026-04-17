@@ -9567,6 +9567,8 @@ self: super: with self; {
 
   marshmallow = callPackage ../development/python-modules/marshmallow { };
 
+  marshmallow_3 = callPackage ../development/python-modules/marshmallow/3.nix { };
+
   marshmallow-dataclass = callPackage ../development/python-modules/marshmallow-dataclass { };
 
   marshmallow-oneofschema = callPackage ../development/python-modules/marshmallow-oneofschema { };
