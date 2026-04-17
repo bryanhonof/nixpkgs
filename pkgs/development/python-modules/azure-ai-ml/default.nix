@@ -57,7 +57,7 @@ let
 in
 buildPythonPackage rec {
   pname = "azure-ai-ml";
-  version = "1.28.1";
+  version = "1.32.0";
   pyproject = true;
 
   disabled = pythonOlder "3.7";
@@ -65,7 +65,7 @@ buildPythonPackage rec {
   src = fetchPypi {
     inherit version;
     pname = "azure_ai_ml";
-    hash = "sha256-qkRjjQM+ZDk8OVL1mnOCLx0/iTBXvQ8ZV/gR1+algDY=";
+    hash = "sha256-7bkCGVIEEhMvrBAKMaQCZKIUUVDcSmD7iErNrMje19U=";
   };
 
   build-system = [ setuptools ];
