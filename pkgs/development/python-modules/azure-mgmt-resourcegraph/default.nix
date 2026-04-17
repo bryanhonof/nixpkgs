@@ -2,31 +2,39 @@
   lib,
   buildPythonPackage,
   fetchPypi,
-  msrest,
-  msrestazure,
-  azure-common,
   azure-mgmt-core,
-  azure-mgmt-nspkg,
-  isPy3k,
+  msrest,
+  pythonOlder,
+  setuptools,
+  typing-extensions,
+  wheel,
 }:
 
 buildPythonPackage rec {
   pname = "azure-mgmt-resourcegraph";
-  version = "8.0.0";
-  format = "setuptools";
+  version = "8.0.1";
+  pyproject = true;
+
+  disabled = pythonOlder "3.9";
 
   src = fetchPypi {
-    inherit pname version;
-    extension = "zip";
-    hash = "sha256-0l8B2uOJd4D7PdyhbRYltjR8MvG1gcdn+6XvOyREPxE=";
+    pname = "azure_mgmt_resourcegraph";
+    inherit version;
+    hash = "sha256-VaIdZtprKKCA2QPsoZLQL8HP0HdeE5sw1EEXykumrR8=";
   };
 
-  propagatedBuildInputs = [
-    msrest
-    msrestazure
-    azure-common
-    azure-mgmt-core
+  build-system = [
+    setuptools
+    wheel
   ];
+
+  dependencies = [
+    msrest
+    azure-mgmt-core
+    typing-extensions
+  ];
+
+  pythonImportsCheck = [ "azure.mgmt.resourcegraph" ];
 
   meta = with lib; {
     description = "This is the Microsoft Azure Resource Graph Client Library";
