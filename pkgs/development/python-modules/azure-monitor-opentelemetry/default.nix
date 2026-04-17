@@ -13,6 +13,7 @@
   opentelemetry-instrumentation-django,
   opentelemetry-instrumentation-fastapi,
   opentelemetry-instrumentation-flask,
+  opentelemetry-instrumentation-logging,
   opentelemetry-instrumentation-psycopg2,
   opentelemetry-instrumentation-requests,
   opentelemetry-instrumentation-urllib,
@@ -23,14 +24,14 @@
 
 buildPythonPackage rec {
   pname = "azure-monitor-opentelemetry";
-  version = "1.7.0";
+  version = "1.8.7";
 
   pyproject = true;
 
   src = fetchPypi {
     inherit version;
     pname = "azure_monitor_opentelemetry";
-    hash = "sha256-66deeTqV1Q9uW8Nd0ngXROLBpcyAG1MLaI9klCPy7gA=";
+    hash = "sha256-0KQwxpRR+PoJNidp0tZUcXE5ift45K0PUIMrWXkh77s=";
   };
 
   build-system = [ setuptools ];
@@ -46,6 +47,7 @@ buildPythonPackage rec {
     opentelemetry-instrumentation-django
     opentelemetry-instrumentation-fastapi
     opentelemetry-instrumentation-flask
+    opentelemetry-instrumentation-logging
     opentelemetry-instrumentation-psycopg2
     opentelemetry-instrumentation-requests
     opentelemetry-instrumentation-urllib
