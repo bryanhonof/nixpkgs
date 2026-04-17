@@ -1405,6 +1405,10 @@ self: super: with self; {
 
   azure-core = callPackage ../development/python-modules/azure-core { };
 
+  azure-core-tracing-opentelemetry =
+    callPackage ../development/python-modules/azure-core-tracing-opentelemetry
+      { };
+
   azure-cosmos = callPackage ../development/python-modules/azure-cosmos { };
 
   azure-cosmosdb-nspkg = callPackage ../development/python-modules/azure-cosmosdb-nspkg { };
