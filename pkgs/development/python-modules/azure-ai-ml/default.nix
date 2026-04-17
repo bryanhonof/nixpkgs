@@ -1,7 +1,6 @@
 {
   lib,
   buildPythonPackage,
-  fetchFromGitHub,
   fetchPypi,
 
   azure-core,
@@ -13,8 +12,7 @@
   azure-monitor-opentelemetry,
 
   pyyaml,
-  marshmallow,
-  packaging,
+  marshmallow_3,
   jsonschema,
   tqdm,
   strictyaml,
@@ -28,33 +26,10 @@
   # mldesigner,
   # azureml-dataprep-rslex,
 
-  flit-core,
   pythonOlder,
   setuptools,
 }:
 
-let
-  marshmallow_3 = buildPythonPackage {
-    pname = "marshmallow";
-    version = "3.26.1";
-    pyproject = true;
-
-    src = fetchFromGitHub {
-      owner = "marshmallow-code";
-      repo = "marshmallow";
-      tag = "3.26.1";
-      hash = "sha256-l5pEhv8D6jRlU24SlsGQEkXda/b7KUdP9mAqrZCbl38=";
-    };
-
-    build-system = [ flit-core ];
-    dependencies = [ packaging ];
-
-    # Upstream's full test matrix drags in optional deps that are not needed by azure-ai-ml.
-    doCheck = false;
-
-    pythonImportsCheck = [ "marshmallow" ];
-  };
-in
 buildPythonPackage rec {
   pname = "azure-ai-ml";
   version = "1.32.0";
