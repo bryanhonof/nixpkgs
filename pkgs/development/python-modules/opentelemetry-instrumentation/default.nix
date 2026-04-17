@@ -5,14 +5,14 @@
   hatchling,
   opentelemetry-api,
   opentelemetry-test-utils,
+  packaging,
   pytestCheckHook,
-  setuptools,
   wrapt,
 }:
 
 buildPythonPackage rec {
   pname = "opentelemetry-instrumentation";
-  version = "0.57b0";
+  version = "0.61b0";
   pyproject = true;
 
   # To avoid breakage, every package in opentelemetry-python-contrib must inherit this version, src, and meta
@@ -20,7 +20,7 @@ buildPythonPackage rec {
     owner = "open-telemetry";
     repo = "opentelemetry-python-contrib";
     tag = "v${version}";
-    hash = "sha256-grV3E8H42pyKDZQO+RrgDORAw/jee8YJSB69Pd3LCS8=";
+    hash = "sha256-DT13gcYPNYXBPnf622WsA16C+7sabJfOshDquHn06Ok=";
   };
 
   sourceRoot = "${src.name}/opentelemetry-instrumentation";
@@ -29,7 +29,7 @@ buildPythonPackage rec {
 
   dependencies = [
     opentelemetry-api
-    setuptools
+    packaging
     wrapt
   ];
 

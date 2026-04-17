@@ -29,6 +29,10 @@ buildPythonPackage {
 
   pythonImportsCheck = [ "opentelemetry.instrumentation.logging" ];
 
+  # Benchmarks require pytest-benchmark's `benchmark` fixture, which isn't wired
+  # in this package's current test setup.
+  disabledTestPaths = [ "benchmarks/" ];
+
   meta = opentelemetry-instrumentation.meta // {
     homepage = "https://github.com/open-telemetry/opentelemetry-python-contrib/blob/main/instrumentation/opentelemetry-instrumentation-logging";
     description = "Logging instrumentation for OpenTelemetry";

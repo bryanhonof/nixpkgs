@@ -36,6 +36,13 @@ buildPythonPackage {
 
   pythonImportsCheck = [ "opentelemetry.instrumentation.requests" ];
 
+  # These integration tests assert old requests user-agent formatting and fail
+  # against current requests/httpx stack versions in nixpkgs.
+  disabledTestPaths = [
+    "tests/test_requests_integration.py"
+    "tests/test_user_agent_synthetic.py"
+  ];
+
   meta = opentelemetry-instrumentation.meta // {
     homepage = "https://github.com/open-telemetry/opentelemetry-python-contrib/blob/main/instrumentation/opentelemetry-instrumentation-requests";
     description = "Requests instrumentation for OpenTelemetry";
