@@ -350,14 +350,11 @@
 
   ml = mkAzExtension rec {
     pname = "ml";
-    version = "2.38.1";
+    version = "2.42.0";
     url = "https://github.com/Azure/azure-cli-extensions/releases/download/ml-${version}/ml-${version}-py3-none-any.whl";
-    hash = "sha256-0xfoiKSe+nYWXAMHDREdZf4LVAArnlJGmJLySajLvBI=";
+    hash = "sha256-nRNAUno+D+EN5j5APNBwEb992X58mKbNfTq3d0ry9Gw=";
     description = "Microsoft Azure Command-Line Tools AzureMachineLearningWorkspaces Extension";
-    pythonRelaxDeps = [
-      "azure-identity"
-      "marshmallow"
-    ];
+    pythonRelaxDeps = [ "azure-identity" ];
     propagatedBuildInputs = with python3Packages; [
       azure-ai-ml
       azure-common
