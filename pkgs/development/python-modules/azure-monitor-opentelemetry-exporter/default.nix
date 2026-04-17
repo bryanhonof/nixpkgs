@@ -7,7 +7,6 @@
 
   azure-core,
   azure-identity,
-  fixedint,
   msrest,
   opentelemetry-api,
   opentelemetry-sdk,
@@ -16,28 +15,23 @@
 
 buildPythonPackage rec {
   pname = "azure-monitor-opentelemetry-exporter";
-  version = "1.0.0b41";
+  version = "1.0.0b51";
 
   pyproject = true;
 
   src = fetchPypi {
     inherit version;
     pname = "azure_monitor_opentelemetry_exporter";
-    hash = "sha256-s2Pm+JwN7hbQJ4KjEKYNYm5MCB70nVM/9SJaQMurEsw=";
+    hash = "sha256-phccNDJrzWIWk4u0DXFcFfHyKYSsGYb8lyMTNtisTDw=";
   };
 
   build-system = [ setuptools ];
 
-  pythonRelaxDeps = [
-    "fixedint"
-    "opentelemetry-sdk"
-    "opentelemetry-api"
-  ];
+  pythonRelaxDeps = [ "azure-identity" ];
 
   dependencies = [
     azure-core
     azure-identity
-    fixedint
     msrest
     opentelemetry-api
     opentelemetry-sdk
